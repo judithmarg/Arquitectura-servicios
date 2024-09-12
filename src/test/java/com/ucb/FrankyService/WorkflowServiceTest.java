@@ -2,8 +2,6 @@ package com.ucb.FrankyService;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class WorkflowServiceTest {
@@ -19,23 +17,27 @@ class WorkflowServiceTest {
     }
 
     @Test
-    void delete() {
+    void deleteNonexistentWorkflow() {
         WorkflowService workflowService = new WorkflowService();
-       boolean resp =  workflowService.delete(new Workflow("gitflowcito", "description"));
-        assertEquals(false,resp);
+        boolean resp =  workflowService.delete("gitflowcito");
+        assertFalse(resp);
     }
 
     @Test
-    void delete2() {
+    void deleteExistentWorkflow() {
         WorkflowService workflowService = new WorkflowService();
-
+        workflowService.create(new Workflow("gitflowcito", "description"));
         workflowService.create(new Workflow("     feauture-branch     ", "description2"));
-
-        boolean resp =  workflowService.delete(new Workflow("feauture-branch", "description2"));
-        assertEquals(true,resp);
+        boolean response =  workflowService.delete("gitflowcito");
+        assertTrue(response);
     }
 
     @Test
     void update() {
+        WorkflowService workflowService = new WorkflowService();
+        workflowService.create(new Workflow("gitflowcito", "description"));
+
+        Workflow otherWorkflow = new Workflow("feauture-branch", "description2");
+        assertTrue(workflowService.update("gitflowcito", otherWorkflow));
     }
 }

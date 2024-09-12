@@ -1,6 +1,5 @@
 package com.ucb.FrankyService;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -34,29 +33,21 @@ public class WorkflowController {
 
     }
 
-//    @PostMapping("/update")
-//    public void update(
-//            @RequestBody WorkflowDto workflowDto
-//    ){
-//        Workflow workflow = new Workflow(
-//                workflowDto.name(),
-//                workflowDto.description()
-//        );
-//        this.workflowService.update(
-//                workflow
-//        );
-//    }
-
-    @DeleteMapping("/delete")
-    public void delete(
-            @RequestBody WorkflowDto workflowDto
+    @PutMapping("/update")
+    public void update(
+            @RequestBody WorkflowDto workflowDto, @RequestBody String name
     ){
         Workflow workflow = new Workflow(
                 workflowDto.name(),
                 workflowDto.description()
         );
-        this.workflowService.delete(
-                workflow
-        );
+        this.workflowService.update(name, workflow);
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(
+            @RequestBody String nameWorkflow
+    ){
+        this.workflowService.delete(nameWorkflow);
     }
 }

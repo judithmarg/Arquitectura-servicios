@@ -28,14 +28,22 @@ public class WorkflowService {
     }
 
     public boolean delete(String nameWorkflow) {
-        int lastLength = list.size();
-        int index = findIndex(nameWorkflow);
-        list.remove(index);
-        return lastLength != list.size();
+        try {
+            int lastLength = list.size();
+            int index = findIndex(nameWorkflow);
+            list.remove(index);
+            return lastLength != list.size();
+        }catch(Exception e) {
+            return false;
+        }
     }
 
-    public void update(String name, Workflow newWorkflow) {
+    public boolean update(String name, Workflow newWorkflow) {
         int index = findIndex(name);
+        String lastName = list.get(index).name();
+        String lastDescription = list.get(index).description();
         list.set(index, newWorkflow);
+        return !(list.get(index).description().equals(lastDescription)
+                || list.get(index).name().equals(lastName));
     }
 }
