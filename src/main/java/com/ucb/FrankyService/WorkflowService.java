@@ -18,9 +18,11 @@ public class WorkflowService {
     }
 
     public int findIndex(String name) {
+        String nameFormated = name.trim().toLowerCase();
         int indexFounded = -1;
         for(int index = 0; index < list.size(); index++) {
-            if(list.get(index).name().equals(name)){
+            String nameToCompare = list.get(index).name().trim().toLowerCase();
+            if(nameToCompare.equals(nameFormated)){
                 indexFounded = index;
             }
         }
