@@ -49,7 +49,6 @@ class WorkflowServiceTest {
 
         Workflow otherWorkflow = new Workflow("    feauture-branch   ", "Cada rama se crea por una funcionalidad");
         assertTrue(workflowService.update("feauture-branch", otherWorkflow));
-
     }
 
     @Test
@@ -60,4 +59,14 @@ class WorkflowServiceTest {
 
         assertTrue(workflowService.delete("    centralized"));
     }
+
+    @Test
+    void updateIncorrect() {
+        WorkflowService workflowService = new WorkflowService();
+        workflowService.create(new Workflow("forking-workflow", "Es general"));
+
+        Workflow otherWorkflow = new Workflow("forking-workflow", "Es general");
+        assertFalse(workflowService.update("feauture-branch", otherWorkflow));
+    }
+
 }

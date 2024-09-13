@@ -42,6 +42,10 @@ public class WorkflowService {
 
     public boolean update(String name, Workflow newWorkflow) {
         int index = findIndex(name);
+
+        if(index == -1) {
+            return false;
+        }
         String lastName = list.get(index).name();
         String lastDescription = list.get(index).description();
         list.set(index, newWorkflow);
