@@ -9,7 +9,14 @@ public class ConfigurationParam {
     @Value("${dollarOfficial}")
     double officialDollar;
 
+    @Value("${textGreeting}")
+    String textGreeting;
+
     double getOfficialDollar() {
         return officialDollar;
+    }
+
+    String getTextGreeting() {
+        return textGreeting;
     }
 }

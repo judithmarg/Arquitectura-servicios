@@ -1,13 +1,20 @@
 package com.ucb.FrankyService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GreetingService {
 
-    String greet = "Pregúntate si lo que estás haciendo hoy te acerca al lugar en el que quieras estar mañana.";
+    @Autowired
+    ConfigurationParam configurationParam;
 
     public String getGreeting() {
-        return greet;
+        return configurationParam.getTextGreeting();
+    }
+
+    public String getGreeting(String username) {
+        String name = username.trim() + ". ";
+        return name + configurationParam.getTextGreeting();
     }
 }

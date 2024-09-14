@@ -1,9 +1,9 @@
 package com.ucb.FrankyService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/greet")
@@ -16,4 +16,13 @@ public class GreetingController {
     public String greeting() {
         return this.greetingService.getGreeting();
     }
+
+    @GetMapping("/greet-with-name")
+    public String greetWithName(
+            @RequestBody Map<String, String> payload
+    ) {
+        String name = payload.get("name");
+        return greetingService.getGreeting(name);
+    }
+
 }
