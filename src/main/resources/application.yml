@@ -5,4 +5,10 @@ server:
   port: 9090
 
 dollarOfficial: 6.96
-textGreeting : "Pregúntate si lo que estás haciendo hoy te acerca al lugar en el que quieras estar mañana."
+textGreeting: "Pregúntate si lo que estás haciendo hoy te acerca al lugar en el que quieras estar mañana."
+greetingEnglish: "Ask yourself if what you are doing today is getting you closer to where you want to be tomorrow."
+greetingFrench: "Demandez-vous si ce que vous faites aujourd'hui vous rapproche de votre objectif de demain."
+greetingItalian: "Chiedetevi se quello che state facendo oggi vi porta più vicino a dove volete essere domani."
+greetingChinese: "问问自己，今天所做的一切是否能让你更接近明天的目标。"
+greetingPortuguese: "Pergunte a si próprio se o que está a fazer hoje o aproxima do lugar onde quer estar amanhã."
+greetingGerman: "Fragen Sie sich, ob das, was Sie heute tun, Sie dem Ziel von morgen näher bringt."

@@ -35,19 +35,19 @@ public class WorkflowController {
 
     @PutMapping("/update")
     public void update(
-            @RequestBody WorkflowDto workflowDto, @RequestBody String name
+            @RequestBody UpdateWorkflow updateWorkflow
     ){
         Workflow workflow = new Workflow(
-                workflowDto.name(),
-                workflowDto.description()
+                updateWorkflow.updateName(),
+                updateWorkflow.updateDescription()
         );
-        this.workflowService.update(name, workflow);
+        this.workflowService.update(updateWorkflow.originalName(), workflow);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{name}")
     public void delete(
-            @RequestBody String nameWorkflow
+            @PathVariable String name
     ){
-        this.workflowService.delete(nameWorkflow);
+        this.workflowService.delete(name);
     }
 }
