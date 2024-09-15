@@ -10,11 +10,11 @@ public class GreetingService {
     ConfigurationParam configurationParam;
 
     public String getGreeting() {
-        return configurationParam.getTextGreeting();
+        return configurationParam.getTextGreeting("spanish");
     }
 
-    public String getGreeting(String username) {
+    public String getGreeting(String username, String language) {
         String name = username.trim() + ". ";
-        return name + configurationParam.getTextGreeting();
+        return name + configurationParam.getTextGreeting(language);
     }
 }

@@ -22,7 +22,8 @@ public class GreetingController {
             @RequestBody Map<String, String> payload
     ) {
         String name = payload.get("name");
-        return greetingService.getGreeting(name);
+        String language = payload.get("language");
+        return greetingService.getGreeting(name, language);
     }
 
 }
