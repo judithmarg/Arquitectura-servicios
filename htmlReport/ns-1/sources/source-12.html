@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > User</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ucb.FrankyService</a>
+</div>
+
+<h1>Coverage Summary for Class: User (com.ucb.FrankyService)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">User</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    15.4%
+  </span>
+  <span class="absValue">
+    (2/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    42.1%
+  </span>
+  <span class="absValue">
+    (8/19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ucb.FrankyService;
+&nbsp;
+&nbsp;public class User {
+&nbsp;    public String getLastName() {
+<b class="nc">&nbsp;        return lastName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setLastName(String lastName) {
+<b class="nc">&nbsp;        this.lastName = lastName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getName() {
+<b class="nc">&nbsp;        return name;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setName(String name) {
+<b class="nc">&nbsp;        this.name = name;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getCi() {
+<b class="fc">&nbsp;        return ci;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setCi(String ci) {
+<b class="nc">&nbsp;        this.ci = ci;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getBirthDate() {
+<b class="nc">&nbsp;        return birthDate;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setBirthDate(String birthDate) {
+<b class="nc">&nbsp;        this.birthDate = birthDate;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEmissionDate() {
+<b class="nc">&nbsp;        return emissionDate;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEmissionDate(String emissionDate) {
+<b class="nc">&nbsp;        this.emissionDate = emissionDate;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getExpirationDate() {
+<b class="nc">&nbsp;        return expirationDate;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setExpirationDate(String expirationDate) {
+<b class="nc">&nbsp;        this.expirationDate = expirationDate;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private String name;
+&nbsp;    private String lastName;
+&nbsp;    private String ci;
+&nbsp;    private String birthDate;
+&nbsp;    private String emissionDate;
+&nbsp;    private String expirationDate;
+&nbsp;
+<b class="fc">&nbsp;    public User(String name, String lastName, String ci, String birthDate, String emissionDate, String expirationDate) {</b>
+<b class="fc">&nbsp;        this.name = name;</b>
+<b class="fc">&nbsp;        this.lastName = lastName;</b>
+<b class="fc">&nbsp;        this.ci = ci;</b>
+<b class="fc">&nbsp;        this.birthDate = birthDate;</b>
+<b class="fc">&nbsp;        this.emissionDate = emissionDate;</b>
+<b class="fc">&nbsp;        this.expirationDate = expirationDate;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-24 18:20</div>
+</div>
+</body>
+</html>

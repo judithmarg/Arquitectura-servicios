@@ -1,0 +1,157 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > WorkflowController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ucb.FrankyService</a>
+</div>
+
+<h1>Coverage Summary for Class: WorkflowController (com.ucb.FrankyService)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">WorkflowController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ucb.FrankyService;
+&nbsp;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.*;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/work-flow&quot;)
+&nbsp;public class WorkflowController {
+&nbsp;
+&nbsp;    WorkflowService workflowService;
+&nbsp;
+<b class="nc">&nbsp;    public WorkflowController(WorkflowService workflowService) {</b>
+<b class="nc">&nbsp;        this.workflowService = workflowService;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping()
+&nbsp;    public List list() {
+<b class="nc">&nbsp;        return workflowService.obtainList();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @PostMapping()
+&nbsp;    public void save(
+&nbsp;            @RequestBody WorkflowDto workflowDto
+&nbsp;    ) {
+<b class="nc">&nbsp;        Workflow workflow = new Workflow(</b>
+<b class="nc">&nbsp;                workflowDto.name(),</b>
+<b class="nc">&nbsp;                workflowDto.description()</b>
+&nbsp;        );
+<b class="nc">&nbsp;        this.workflowService.create(</b>
+&nbsp;                workflow
+&nbsp;        );
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    @PutMapping(&quot;/update&quot;)
+&nbsp;    public void update(
+&nbsp;            @RequestBody UpdateWorkflow updateWorkflow
+&nbsp;    ){
+<b class="nc">&nbsp;        Workflow workflow = new Workflow(</b>
+<b class="nc">&nbsp;                updateWorkflow.updateName(),</b>
+<b class="nc">&nbsp;                updateWorkflow.updateDescription()</b>
+&nbsp;        );
+<b class="nc">&nbsp;        this.workflowService.update(updateWorkflow.originalName(), workflow);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @DeleteMapping(&quot;/delete/{name}&quot;)
+&nbsp;    public void delete(
+&nbsp;            @PathVariable String name
+&nbsp;    ){
+<b class="nc">&nbsp;        this.workflowService.delete(name);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-24 18:20</div>
+</div>
+</body>
+</html>

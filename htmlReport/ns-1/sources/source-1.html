@@ -1,0 +1,154 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > ConfigurationParam</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.ucb.FrankyService</a>
+</div>
+
+<h1>Coverage Summary for Class: ConfigurationParam (com.ucb.FrankyService)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ConfigurationParam</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.ucb.FrankyService;
+&nbsp;
+&nbsp;import org.springframework.beans.factory.annotation.Value;
+&nbsp;import org.springframework.stereotype.Component;
+&nbsp;
+&nbsp;import java.util.HashMap;
+&nbsp;import java.util.Map;
+&nbsp;
+&nbsp;@Component
+<b class="nc">&nbsp;public class ConfigurationParam {</b>
+&nbsp;
+&nbsp;    @Value(&quot;${dollarOfficial}&quot;)
+&nbsp;    double officialDollar;
+&nbsp;
+&nbsp;    @Value(&quot;${textGreeting}&quot;)
+&nbsp;    String greetingSpanish;
+&nbsp;
+&nbsp;    @Value(&quot;${greetingEnglish}&quot;)
+&nbsp;    String greetingEnglish;
+&nbsp;
+&nbsp;    @Value(&quot;${greetingChinese}&quot;)
+&nbsp;    String greetingChinese;
+&nbsp;
+&nbsp;    @Value(&quot;${greetingFrench}&quot;)
+&nbsp;    String greetingFrench;
+&nbsp;
+&nbsp;    @Value(&quot;${greetingItalian}&quot;)
+&nbsp;    String greetingItalian;
+&nbsp;
+&nbsp;    @Value(&quot;${greetingPortuguese}&quot;)
+&nbsp;    String greetingPortuguese;
+&nbsp;
+&nbsp;    @Value(&quot;${greetingGerman}&quot;)
+&nbsp;    String greetingGerman;
+&nbsp;
+&nbsp;    double getOfficialDollar() {
+<b class="nc">&nbsp;        return officialDollar;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    String getTextGreeting(String language) {
+<b class="nc">&nbsp;        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();</b>
+<b class="nc">&nbsp;        map.put(&quot;spanish&quot;, greetingSpanish);</b>
+<b class="nc">&nbsp;        map.put(&quot;english&quot;, greetingEnglish);</b>
+<b class="nc">&nbsp;        map.put(&quot;portuguese&quot;, greetingPortuguese);</b>
+<b class="nc">&nbsp;        map.put(&quot;chinese&quot;, greetingChinese);</b>
+<b class="nc">&nbsp;        map.put(&quot;italian&quot;, greetingItalian);</b>
+<b class="nc">&nbsp;        map.put(&quot;french&quot;, greetingFrench);</b>
+<b class="nc">&nbsp;        return map.get(language);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-24 18:20</div>
+</div>
+</body>
+</html>
