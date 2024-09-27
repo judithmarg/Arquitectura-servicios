@@ -18,11 +18,11 @@ public class PatternsRepository {
                 "Creational",
                 new String[]{"Avoid tight coupling between the creator and the concrete product",
                     "Single Responsibility Principle", "Open/Closed Principle, new types of data without breaking existing code"},
-                new String[]{" The code may become more complicated",
-                    " need to introduce a lot of new subclasses to implement the pattern."},
                 new String[]{"when you don’t know beforehand the exact types and dependencies of the objects your code should work with.",
                 "when you want to provide users of your library or framework with a way to extend its internal components.",
-                "when you want to save system resources by reusing existing objects instead of rebuilding them each time."}
+                "when you want to save system resources by reusing existing objects instead of rebuilding them each time."},
+                new String[]{" The code may become more complicated",
+                        " need to introduce a lot of new subclasses to implement the pattern."}
         ));
         patterns.add(new Pattern(
                 "Prototype",
@@ -37,10 +37,10 @@ public class PatternsRepository {
                         "can get rid of repeated initialization code in favor of cloning pre-built prototypes.",
                         "can produce complex objects more conveniently.",
                         "You get an alternative to inheritance when dealing with configuration presets"},
-                new String[]{" Cloning complex objects that have circular references might be very tricky."},
                 new String[]{"when your code shouldn’t depend on the concrete classes of objects that you need to copy.",
                         "when you want to reduce the number of subclasses that only differ in the way they initialize their respective objects.",
-                        "lets you use a set of pre-built objects configured in various ways as prototypes. Instead of instantiating a subclass that matches some configuration."}
+                        "lets you use a set of pre-built objects configured in various ways as prototypes. Instead of instantiating a subclass that matches some configuration."},
+                new String[]{" Cloning complex objects that have circular references might be very tricky."}
         ));
         patterns.add(new Pattern(
                 "Decorator",
@@ -114,6 +114,6 @@ public class PatternsRepository {
     }
 
     public Pattern findByName(String name) {
-        return patterns.stream().filter(pattern1 -> pattern1.getName().equals(name)).findFirst().orElse(null);
+        return patterns.stream().filter(pattern1 -> pattern1.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
     }
 }

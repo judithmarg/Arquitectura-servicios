@@ -36,4 +36,38 @@ class PatternsServiceTest {
                         //act
                         patternsService.findPattern("Adapter", "Creational"));
     }
+
+    @Test
+    void findPatternOther() throws CategoryException {
+        //arrange
+        PatternsRepository repository = new PatternsRepository();
+        PatternsService patternsService = new PatternsService(repository);
+        String[] comparator = new String[]{"You can swap algorithms used inside an object at runtime.",
+                "You can isolate the implementation details of an algorithm from the code that uses it.",
+                "You can replace inheritance with composition.",
+                "Open/Closed Principle. You can introduce new strategies without having to change the context."};
+
+        //act
+        Pattern patternResult = patternsService.findPattern("Strategy", "Behavioral");
+
+        //assert
+        assertThat(patternResult.getAdvantages()).isEqualTo(comparator);
+    }
+
+    @Test
+    void findPatternLowerCase() throws CategoryException {
+        //arrange
+        PatternsRepository repository = new PatternsRepository();
+        PatternsService patternsService = new PatternsService(repository);
+        String[] comparator = new String[]{"You can swap algorithms used inside an object at runtime.",
+                "You can isolate the implementation details of an algorithm from the code that uses it.",
+                "You can replace inheritance with composition.",
+                "Open/Closed Principle. You can introduce new strategies without having to change the context."};
+
+        //act
+        Pattern patternResult = patternsService.findPattern("STRATEGY", "BehAviOral");
+
+        //assert
+        assertThat(patternResult.getAdvantages()).isEqualTo(comparator);
+    }
 }

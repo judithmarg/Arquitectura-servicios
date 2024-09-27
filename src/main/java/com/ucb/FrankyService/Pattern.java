@@ -9,7 +9,7 @@ public class Pattern {
     private String[] disadvantages;
     private String[] application;
 
-    public Pattern(String name, String[] features, String category, String[] advantages, String[] disadvantages, String[] application) {
+    public Pattern(String name, String[] features, String category, String[] application, String[] advantages, String[] disadvantages) {
         this.name = name;
         this.disadvantages = disadvantages;
         this.features = features;
