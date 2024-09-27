@@ -43,7 +43,7 @@ public class PatternsRepository {
                         "lets you use a set of pre-built objects configured in various ways as prototypes. Instead of instantiating a subclass that matches some configuration."}
         ));
         patterns.add(new Pattern(
-                "",
+                "Decorator",
                 new String[]{"The Component declares the common interface for both wrappers and wrapped objects.",
                         "Concrete Component is a class of objects being wrapped. It defines the basic behavior",
                 "The Base Decorator class has a field for referencing a wrapped object. The field’s type should be declared as the component interface",
@@ -61,7 +61,7 @@ public class PatternsRepository {
                 " It’s hard to remove a specific wrapper from the wrappers stack."}
         ));
         patterns.add(new Pattern(
-                "Intent",
+                "Adapter",
                 new String[]{"design pattern that allows objects with incompatible interfaces to collaborate.",
                 "The Client is a class that contains the existing business logic of the program.",
                 "The Client Interface describes a protocol that other classes must follow to be able to collaborate with the client code",
