@@ -16,16 +16,21 @@ public class PatternsController {
     }
 
     @GetMapping()
-    public ResponseEntity<PatternResponseDto> getPatternByName(@RequestBody PatternRequestDto patternRequestDto) {
-        Pattern pattern = patternsService.findByName(patternRequestDto.name());
-        PatternResponseDto patternResponseDto = new PatternResponseDto(
-                pattern.getName(),
-                pattern.getCategory(),
-                pattern.getFeatures(),
-                pattern.getAdvantages(),
-                pattern.getDisadvantages(),
-                pattern.getApplication()
-        );
-        return ResponseEntity.ok(patternResponseDto);
+    public ResponseEntity<?> getPattern(@RequestBody PatternRequestDto patternRequestDto) {
+        try {
+            Pattern pattern = patternsService.findPattern(patternRequestDto.name(), patternRequestDto.category());
+            PatternResponseDto patternResponseDto = new PatternResponseDto(
+                    pattern.getName(),
+                    pattern.getCategory(),
+                    pattern.getFeatures(),
+                    pattern.getAdvantages(),
+                    pattern.getDisadvantages(),
+                    pattern.getApplication()
+            );
+            return ResponseEntity.ok(patternResponseDto);
+        } catch (CategoryException categoryException) {
+            return ResponseEntity.badRequest().body(categoryException.getMessage());
+        }
+
     }
 }

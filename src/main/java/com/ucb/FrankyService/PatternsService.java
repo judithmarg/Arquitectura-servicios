@@ -14,8 +14,12 @@ public class PatternsService {
         return patternsRepository;
     }
 
-    public Pattern findByName(String name){
-        return patternsRepository.findByName(name);
+    public Pattern findPattern(String name, String category) throws CategoryException {
+        Pattern result = patternsRepository.findByName(name);
+        if(!result.getCategory().equals(category)){
+            throw new CategoryException("The design pattern doesn't have the category specified.");
+        }
+        return result;
     }
 
 }

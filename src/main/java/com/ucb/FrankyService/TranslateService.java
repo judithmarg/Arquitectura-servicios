@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class TranslateService {
 
-    ApiTranslate apiTranslate;
-    TranslateService(ApiTranslate apiTranslate) {
+    GoogleTranslate apiTranslate;
+    TranslateService(GoogleTranslate apiTranslate) {
         this.apiTranslate = apiTranslate;
     }
 
